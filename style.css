@@ -1,0 +1,36 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    
+}
+.box{
+    padding: 20px;
+    display: flex;
+    border: 3px solid black;
+    border-radius: 7px;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+#weathercon{
+    font-size: 80px;
+    padding : 10px;
+}
+h1{
+    padding : 10px;
+}
+h2{
+    padding : 15px;
+}
+
+
+

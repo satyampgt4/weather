@@ -1,0 +1,1 @@
+api.openweathermap.org/data/2.5/weather?q=Panna&appid=50c62cdc83daaee65ec07e38194ba980

@@ -1,0 +1,114 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+*{
+    margin: 0px;
+    padding: 0px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    background-color: rgb(81, 238, 243);
+}
+.box{
+    padding: 20px;
+    display: flex;
+    border: 3px solid rgb(226, 245, 248);
+    border-radius: 7px;
+    background-color: white;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.info{
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+#weathercon{
+    font-size: 80px;
+    padding : 10px;
+    -webkit-animation: rotate 5s normal linear infinite;
+  animation: rotate 5s normal linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  25% {
+    -webkit-transform: rotate3d(0, 0, 1, 90deg);
+    transform: rotate3d(0, 0, 1, 90deg);
+  }
+  50% {
+    -webkit-transform: rotate3d(0, 0, 1, 180deg);
+    transform: rotate3d(0, 0, 1, 180deg);
+  }
+  75% {
+    -webkit-transform: rotate3d(0, 0, 1, 270deg);
+    transform: rotate3d(0, 0, 1, 270deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 360deg);
+    transform: rotate3d(0, 0, 1, 360deg);
+  }
+}
+
+h1{
+    padding : 10px;
+}
+h2{
+    padding : 15px;
+}
+
+
+
+
+
+</style>
+<body><div class="container">
+    <div class="box">
+        <div class="wave -one"></div>
+        <div class="wave -two"></div>
+        <div class="wave -three"></div>
+        <div id="weathercon">
+            <i class="fas fa-sun" style="color: rgb(241, 188, 90)"></i>
+        </div>
+
+        <div class="info">
+            <h2 class="location">
+                <i class="fas fa-street-view"></i>{%location%},{%coun%}
+            </h2>
+            <p id="data">{%date%}</p>
+            <h1 class="temp">{%tempval%}&deg;C</h1>
+            <h3 class="min_max">Min {%tempmin%} &deg;C | Max {%tempmax%} &deg;C</h3>
+        </div>
+    </div>
+</div>
+</body>
+<!-- <script>
+    
+    
+    
+        var date = new Date().toDateString;
+          var today = "" + data.substring(0, 25);
+        console.log(today);
+        document.getElementById("data").innerHTML = data;
+    
+</script> -->
+</html>
