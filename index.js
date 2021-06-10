@@ -1,6 +1,6 @@
 const http = require("http");
 const hostname = '127.0.0.1';
-const port = 3000;
+const port = process.env.PORT || 3000
 
 const fs = require("fs");
 var requests = require("requests");
@@ -37,7 +37,10 @@ const server = http.createServer((req, res) => {
   }
 });
 
-server.listen(port,hostname);
+server.listen(port,() => {
+    console.log(`Server running at port `+port);
+  });
+  
 function dateBuilder () {
     let d = new Date();
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
