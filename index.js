@@ -13,6 +13,7 @@ const replaceVal = (tempVal, oregval) => {
         temp = temp.replace("{%tempmax%}",oregval.main.temp_max);
         temp = temp.replace("{%location%}",oregval.name);
         temp = temp.replace("{%coun%}",oregval.sys.country);
+        temp = temp.replace("{%status%}",oregval.weather[0].main);
         temp = temp.replace("{%date%}",dateBuilder());
         return temp;
 };

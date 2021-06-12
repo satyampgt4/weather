@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link rel="stylesheet" href="style.css">
+    
 </head>
 <style>
 *{
@@ -32,7 +32,7 @@
     background-color: white;
     padding-left: 0px;
     padding-right: 0px;
-    padding-bottom: 0px;
+    /* padding-bottom: 0px; */
 }
 .info{
     background-color: aliceblue;
@@ -41,9 +41,16 @@
     padding: 10px;
 }
 #weathercon{
+  display: flex;
     font-size: 80px;
     padding : 10px;
-    -webkit-animation: rotate 5s normal linear infinite;
+    justify-content: center;
+    align-content: center;
+}
+.fa-sun
+{
+  /* display: none; */
+  -webkit-animation: rotate 5s normal linear infinite;
   animation: rotate 5s normal linear infinite;
 }
 
@@ -69,7 +76,17 @@
     transform: rotate3d(0, 0, 1, 360deg);
   }
 }
-
+.fa-cloud
+{
+  /* display: none; */
+  /* -webkit-animation: clouda 5s normal linear infinite; */
+  animation: clouda 5s normal linear infinite;
+}
+@keyframes clouda {
+  0% { left: 0;}
+    50%{ left : 100%;}
+    100%{ left: 0;}
+}
 h1{
     padding : 10px;
 }
@@ -88,7 +105,7 @@ h2{
         <div class="wave -two"></div>
         <div class="wave -three"></div>
         <div id="weathercon">
-            <i class="fas fa-sun" style="color: rgb(241, 188, 90)"></i>
+            
         </div>
 
         <div class="info">
@@ -102,14 +119,29 @@ h2{
     </div>
 </div>
 </body>
-<!-- <script>
+<script>
     
-    
-    
-        var date = new Date().toDateString;
-          var today = "" + data.substring(0, 25);
-        console.log(today);
-        document.getElementById("data").innerHTML = data;
-    
-</script> -->
+    var x = "{%status%}";
+    console.log(x);
+    if(x == "Clouds")
+    {
+      document.getElementById("weathercon") .innerHTML = `<i class="fas fa-cloud" style="color: rgb(75, 193, 240)"></i>`;
+    }
+    else if(x == "Rain")
+    {
+      document.getElementById("weathercon") .innerHTML = `<i class="fas fa-cloud-showers-heavy" style="color: rgb(0 0 0);"></i>`;
+    }
+    else if(x == "Drizzle")
+    {
+      document.getElementById("weathercon") .innerHTML = `<i class="fas cloud-drizzle" style="color: rgb(0 0 0);"></i>`;
+    }
+    else if(x == "Thunderstorm")
+    {
+      document.getElementById("weathercon") .innerHTML = `<i class="fas fa-bolt" style="color: rgb(240 238 75);"></i>`;
+    }
+    else
+    {
+      document.getElementById("weathercon") .innerHTML = `<i class="fas fa-sun" style="color: rgb(241, 188, 90)"></i>`;
+    }
+</script>
 </html>
